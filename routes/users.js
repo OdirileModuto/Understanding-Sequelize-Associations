@@ -12,6 +12,6 @@ const router = express.Router({ mergeParams: true });
 
 router.route("/users").post(createUser);
 
-// router.route("/users/:id/posts").get(getUsersPost).post(createPost);
+// router.route("/users/:id/posts").get(getUserPost).post(createPost);
 
 module.exports = router;

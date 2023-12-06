@@ -8,6 +8,11 @@ const postController = {
       const user = await User.findByPk(userId, {
         include: [{ model: Post, as: "posts" }],
       });
-    } catch (err) {}
+    } catch (err) {
+      console.error("Error fetching users:", error);
+      res.status(500).json({ error: "Internal Server Error" });
+    }
   },
 };
+
+module.exports = postController;
