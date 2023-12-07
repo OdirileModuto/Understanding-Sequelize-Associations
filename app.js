@@ -1,6 +1,7 @@
 const { sequelize } = require("./models");
 const express = require("express");
 const userRoutes = require("./routes/users");
+const postRoutes = require("./routes/post");
 
 const app = express();
 app.use(express.json());
@@ -23,6 +24,8 @@ app.use("/", [userRoutes]);
 // const config = require("./config");
 
 // const sequelize = new Sequelize(config.development);
+
+console.log(userRoutes);
 
 app.listen({ port: 5000 }, async () => {
   console.log("Server up on http://localhost:5000");

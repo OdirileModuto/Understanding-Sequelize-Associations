@@ -1,5 +1,5 @@
 const express = require("express");
-const { createUser } = require("../controllers/users");
+const userController = require("../controllers/users");
 // const {
 //   getUsers,
 //   getUser,
@@ -8,10 +8,16 @@ const { createUser } = require("../controllers/users");
 //   deleteUser,
 // } = require("../users");
 
-const router = express.Router({ mergeParams: true });
+const router = express.Router();
 
-router.route("/users").post(createUser);
+router
+  .route("/users/:id")
+  .get(userController.getUserById)
+  .patch(userController.updateUser);
 
-// router.route("/users/:id/posts").get(getUserPost).post(createPost);
+router
+  .route("/users")
+  .post(userController.createUser)
+  .get(userController.getAllUsers);
 
 module.exports = router;
