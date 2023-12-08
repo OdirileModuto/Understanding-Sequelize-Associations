@@ -10,9 +10,14 @@ const postController = {
       const user = await User.findByPk(userId, {
         include: [{ model: Post }],
       });
+
+      return res.status(200).json({
+        success: true,
+        data: user,
+      });
     } catch (err) {
       console.error("Error fetching users:", err);
-      res.status(500).json({ error: "Internal Server Error" });
+      res.status(500).json({ success: false, error: "Internal Server Error" });
     }
   },
   addPost: async (req, res) => {
