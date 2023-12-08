@@ -17,10 +17,10 @@ module.exports = (sequelize, DataTypes) => {
   Post.init(
     {
       id: {
+        type: DataTypes.INTEGER,
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: DataTypes.INTEGER,
       },
       user_id: DataTypes.INTEGER,
       title: DataTypes.STRING,

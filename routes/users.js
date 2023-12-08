@@ -17,7 +17,10 @@ router
   .patch(userController.updateUser)
   .delete(userController.removeUser);
 
-router.route("/users/:id/posts").post(postController.addPost);
+router
+  .route("/users/:id/posts")
+  .post(postController.addPost)
+  .get(postController.getUserPosts);
 
 router
   .route("/users")
