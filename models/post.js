@@ -18,13 +18,13 @@ module.exports = (sequelize, DataTypes) => {
     {
       id: {
         allowNull: false,
-        autoIncrement: false,
+        autoIncrement: true,
         primaryKey: true,
         type: DataTypes.INTEGER,
       },
       user_id: DataTypes.INTEGER,
-      tittle: DataTypes.STRING,
-      Body: DataTypes.TEXT,
+      title: DataTypes.STRING,
+      body: DataTypes.TEXT,
     },
     {
       sequelize,

@@ -5,17 +5,17 @@ module.exports = {
     await queryInterface.createTable("Posts", {
       id: {
         allowNull: false,
-        autoIncrement: false,
+        autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
       user_id: {
         type: Sequelize.INTEGER,
       },
-      tittle: {
+      title: {
         type: Sequelize.STRING,
       },
-      Body: {
+      body: {
         type: Sequelize.TEXT,
       },
       createdAt: {

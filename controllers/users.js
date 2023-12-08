@@ -62,10 +62,15 @@ const userController = {
     }
   },
   removeUser: async (req, res) => {
-    const { name, surname } = req.body;
-
     try {
-      const newUser = await User.remove({ name, surname });
+      const userId = req.params.id;
+
+      const newUser = await User.destroy({
+        where: {
+          id: userId,
+        },
+      });
+
       res.status(204).json(newUser);
     } catch (error) {
       console.error("Error creating user:", error);
